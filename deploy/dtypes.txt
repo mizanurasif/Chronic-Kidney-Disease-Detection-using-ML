@@ -1,0 +1,53 @@
+1.Age(numerical)
+  	  	age in years  2 90
+ 	2.Blood Pressure(numerical)
+	       	bp in mm/Hg 50 180
+ 	3.Specific Gravity(nominal)
+	  	sg - (1.005,1.010,1.015,1.020,1.025)
+ 	4.Albumin(nominal)
+		al - (0,1,2,3,4,5)
+ 	5.Sugar(nominal)
+		su - (0,1,2,3,4,5)
+ 	6.Red Blood Cells(nominal)
+		rbc - (normal,abnormal)  0 1
+ 	7.Pus Cell (nominal)
+		pc - (normal,abnormal)   0 1
+ 	8.Pus Cell clumps(nominal)
+		pcc - (present,notpresent)  0 1
+ 	9.Bacteria(nominal)
+		ba  - (present,notpresent)  0 1
+ 	10.Blood Glucose Random(numerical) 		
+		bgr in mgs/dl  22 490
+ 	11.Blood Urea(numerical)	
+		bu in mgs/dl  1  391
+ 	12.Serum Creatinine(numerical)	
+		sc in mgs/dl  0   76
+ 	13.Sodium(numerical)
+		sod in mEq/L  4.5   163 
+ 	14.Potassium(numerical)	
+		pot in mEq/L  2.5   47 
+ 	15.Hemoglobin(numerical)
+		hemo in gms   3.1   17.8
+ 	16.Packed  Cell Volume(numerical)    
+	 	pcv        0 54 
+ 	17.White Blood Cell Count(numerical)
+		wc in cells/cumm        0   26400
+ 	18.Red Blood Cell Count(numerical)	
+		rc in millions/cmm      0   8.8
+ 	19.Hypertension(nominal)	
+		htn - (yes,no)          0   1
+ 	20.Diabetes Mellitus(nominal)	 
+		dm - (yes,no)           0   1
+ 	21.Coronary Artery Disease(nominal)
+		cad - (yes,no)          0   1
+ 	22.Appetite(nominal)	
+		appet - (good,poor)     1   0
+ 	23.Pedal Edema(nominal)
+		pe - (yes,no)	        0   1
+ 	24.Anemia(nominal)
+		ane - (yes,no)          0   1
+ 	25.Class (nominal)		
+		class - (ckd,notckd)    0   1
+
+
+
