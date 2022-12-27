@@ -11,6 +11,7 @@ lr=pickle.load(open('lr.pkl','rb'))
 xgb=pickle.load(open('xgb.pkl','rb'))
 rf=pickle.load(open('rf.pkl','rb'))
 adab=pickle.load(open('abab.pkl','rb'))
+eclf=pickle.load(open('eclf.pkl','rb'))
 
 
 def classify(prediction):
@@ -21,19 +22,16 @@ def classify(prediction):
         return 'NOT CKD'
 
 
-
-
-
 def main():
     # st.title("Streamlit Tutorial")
     html_temp = """
-    <div style="background-color:teal ;padding:10px">
-    <h2 style="color:white;text-align:center;">Chronic Kidney Disease Detection</h2>
+    <div style="background-color:maroon ;padding:10px">
+        <h2 style="color:white;text-align:center;">Chronic Kidney Disease Detection</h2>
     </div>
     """
     st.markdown(html_temp, unsafe_allow_html=True)
     # activities=['Linear Regression','Logistic Regression','SVM']
-    activities=['Support Vector Machine','KNN','Logistic Regression','XGBoost','Random Forest','AdaBoost','Naive Bayes','Sequential Model']
+    activities=['Support Vector Machine','KNN','Logistic Regression','XGBoost','Random Forest','AdaBoost','Majority Voting']
     option=st.sidebar.selectbox('Which model would you like to use?',activities)
     st.subheader(option)
 
@@ -252,9 +250,9 @@ def main():
     print("type of array inputs: ",inputs.dtype)
     st.write(inputs)
 
-    # a = np.array([[48,80,1.02,1,0,0,0,1,1,121,36,1,135.0,3.5,15.4,44,7800,5.2,0,0,1,1,1,1]])
-    # print(a)
-    # print("type of array a: ",a.dtype)
+    a = np.array([[48,80,1.02,1,0,0,0,1,1,121,36,1,135.0,3.5,15.4,44,7800,5.2,0,0,1,1,1,1]])
+    print(a)
+    print("type of array a: ",a.dtype)
 
     b = np.array([[57,60,1.02,0,0,0,0,1,1,105,49,1,150.0,4.7,15.7,44,10400,6.2,1,1,1,1,1,1]])
     print(b)
@@ -302,6 +300,9 @@ def main():
             st.success(classify(adab.predict(inputs)))
         elif option=='Support Vector Machine':
             st.success(classify(svm.predict(inputs)))
+        elif option=='Majority Voting':
+            st.success(classify(eclf.predict(b)))
+
         # elif option=='Naive Bayes':
         #     st.success(classify(nv.predict(inputs)))
             

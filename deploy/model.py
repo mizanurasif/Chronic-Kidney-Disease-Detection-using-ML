@@ -69,6 +69,14 @@ print("train Accuracy ADAB: %0.3f" % adab.score(x_train,y_train))
 print("Test Accuracy ADAB: %0.3f" % adab.score(x_test,y_test))
 
 
+eclf=EnsembleVoteClassifier(clfs=[svm,lr,xgb,rf,adab],weights=[1,1,1,1,1])
+labels=['support_vector_machine_model','Logistic Regression','XGB Model','Random Forest','Ada boost GaussianNB','EVC']
+
+for clf, label in zip([svm,lr,xgb,rf,adab,eclf],labels):
+   clf.fit(x_train,y_train)
+   print("validation Accuracy: %0.5f [%s]" % (clf.score(x_test,y_test),label))
+print("Test Accuracy: %0.5f" % eclf.score(x_test,y_test))
+
 
 
 
@@ -78,3 +86,4 @@ pickle.dump(lr,open('lr.pkl','wb'))
 pickle.dump(xgb,open('xgb.pkl','wb'))
 pickle.dump(rf,open('rf.pkl','wb'))
 pickle.dump(adab,open('abab.pkl','wb'))
+pickle.dump(adab,open('eclf.pkl','wb'))
